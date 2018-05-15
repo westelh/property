@@ -1,0 +1,4 @@
+#ifndef INCLUDED_ELH_PROPERTY_HPP
+#define INCLUDED_ELH_PROPERTY_HPP
+
+#endif
