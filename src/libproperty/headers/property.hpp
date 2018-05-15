@@ -7,8 +7,10 @@ namespace elh {
         T value;
     public:
 
-        template <class Args..>
-        property(Args.. args);
+        template <class... Args>
+        property(Args... args): value{args...} {
+            
+        }
     };
 }
 
