@@ -9,8 +9,16 @@ namespace elh {
 
         template <class... Args>
         property(Args... args): value{args...} {
-            
+
         }
+
+        void operator=(const T& v) {
+            value = v;
+        }
+
+        operator T() const {
+            return value;
+        } 
     };
 }
 
