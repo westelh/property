@@ -2,4 +2,3 @@
 [submodule "gtest"]
 	path = gtest
 	url = https://github.com/westelh/gradleGtest.git
-	ignore = dirty
