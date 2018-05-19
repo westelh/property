@@ -1,10 +1,9 @@
 #include "gtest/gtest.h"
 #include "property.hpp"
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+class testClass {
+    elh::property<int> p;
+};
 
 TEST(wei, hoge) {
     elh::property<int> p;
