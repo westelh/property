@@ -15,10 +15,15 @@ namespace elh {
         void operator=(const T& v) {
             value = v;
         }
+        void operator=(T&& v) {
+            value = std::forward<T>(v);
+        }
 
         operator T() const {
             return value;
-        } 
+        }
+
+        
     };
 }
 
