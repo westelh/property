@@ -2,13 +2,13 @@
 #include "property.hpp"
 
 namespace {
-    constexpr int initialNumber = 1923;
+    int initialNumber = 1923;
 }
 
 class BasicTest : public ::testing::Test {
 protected:
-    BasicTest(): prop{initialNumber} { 
-
+    BasicTest(): prop{&initialNumber} {
+         
     }
 
     elh::property<int> prop;
