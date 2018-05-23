@@ -3,41 +3,23 @@
 
 namespace elh {
     template <class T>
-    class pointer_holder {
-    private:
-        T *const ptr_m;
-    protected:
-        T* get_ptr() const noexcept {
-            return ptr_m;
-        }
-        
+    class property {
+        T& ref;
     public:
-        pointer_holder(T *const init): ptr_m{init} {
+        property(T& reference): ref{reference} { }
 
-        }
-    };
-
-    template <class T>
-    class property final : public pointer_holder<T> {
-    public:
-        using base = pointer_holder<T>;
-
-        property(T *const ptr): pointer_holder<T>(ptr) {
-
+        operator T() noexcept {
+            return ref;
         }
 
-        void operator=(const T& v) {
-            *base::get_ptr() = v;
-        }
-        void operator=(T&& v) {
-            *base::get_ptr() = std::forward<T>(v);
+        operator const T() const noexcept {
+            return ref;
         }
 
-        operator T() const {
-            return *base::get_ptr();
+        property<T>& operator=(const T& t) noexcept {
+            ref = t;
+            return *this;
         }
-
-        
     };
 }
 
